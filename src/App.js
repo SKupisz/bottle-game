@@ -1,9 +1,9 @@
-import Main from "./components/main.jsx";
+import Launcher from "./components/launcher.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <Launcher/>
     </div>
   );
 }

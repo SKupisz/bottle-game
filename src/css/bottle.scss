@@ -1,0 +1,93 @@
+.circle-wrapper{
+    width: 70vh;
+    height: 70vh;
+    position: relative;
+    top: 10vh;
+    background: rgba(194,178,128,.9);
+    border-radius: 50%;
+    border: 10px solid rgb(150,75,0);
+    box-shadow: 1px 1px 10px #111, inset 1px 1px 4px rgba(150,75,0,1), 
+    inset 1px 1px 10px rgba(150,75,0,0.5);
+    .bottle{
+        position: relative;
+        top: 8vh;
+        width: 20%;
+        height: 70%;
+        cursor: pointer;
+        transition: transform 5s;
+        .bottle-main-part,.bottle-top-part,.connector{
+            background: rgb(14, 124, 0);
+        }
+        .bottle-top-part{
+            width: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40%;
+            position: relative;
+            top: 3%;
+            border-radius: 5px 5px 0px 0px;
+            box-shadow: 4px 10px 10px #111;
+            .thread{
+                width: 100%;
+                height: 6%;
+                background: #222;
+                border-radius: 5px 5px 0px 0px;
+            }
+            .end-left,.end-right{
+                width: 0;
+                height: 0;
+                float: left;
+                display: none;
+                border-top: 5px solid #222;
+                border-right: 5px solid transparent;
+                border-radius: 0px 0px 0px 5px;
+            }
+            .end-right{
+                border-left: 5px solid transparent;
+                border-right: 0;
+                border-radius: 0px 0px 5px 0px;
+            }
+        }
+        .connector{
+            width: 100%;
+            height: 12%;
+            border-radius: 50% 50% 0px 0px;
+            box-shadow: 4px 10px 10px #111;
+            position: relative;
+            z-index: 2;
+        }
+        .bottle-main-part{
+            width: 100%;
+            height: 47%;
+            border-radius: 0px 0px 10px 10px;
+            position: relative;
+            box-shadow: 4px 10px 10px #111;
+            z-index: 3;
+            .label{
+                width: calc(inherit - 10%);
+                padding: 5px;
+                height: 37%;
+                background: white;
+                position: relative;
+                top: 12%;
+                text-align: center;
+                font-size: 1.2em;
+                font-family: "Oswald",sans-serif;
+                box-shadow: inset 0px 0px 4px rgb(10, 88, 0);
+            }
+        }
+    }
+}
+@media screen and (max-width: 568px){
+    .circle-wrapper{
+        width: 50vh;
+        height: 50vh;
+        top: 20vh;
+        .bottle-main-part {
+            .label{
+            font-size: 0.9em !important;
+            }
+        }
+    }
+}

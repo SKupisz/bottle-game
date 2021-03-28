@@ -1,15 +1,16 @@
 import React from "react";
-import "../css/main.scss";
 
 export default class Main extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            bottleStyle: {},
-            ifRotated: false,
-            currentRotation: 0
-        };
+        if(this.props.howmanyofthem === undefined){
+            this.state = {
+                bottleStyle: {},
+                ifRotated: false,
+                currentRotation: 0
+            };
+        }
 
         this.bottleRef = React.createRef();
 
@@ -17,8 +18,9 @@ export default class Main extends React.Component{
     }
     changeTheKeyframes(){
         if(this.state.ifRotated === false){
-            let currentAngle = Math.floor(Math.random()*2520 + 90);
+            let currentAngle = Math.floor(Math.random()*2520 + 40);
             if(currentAngle < 0) currentAngle*=(-1);
+            currentAngle+=90;
             console.log(currentAngle,this.state.currentRotation);
             currentAngle+=this.state.currentRotation;
             this.setState({
@@ -39,8 +41,8 @@ export default class Main extends React.Component{
     render(){
         return(
             <div className="main-content">
-                <div className="circle-wrapper">
-                    <div className="bottle" style = {this.state.bottleStyle} ref = {this.bottleRef} onClick = {() => {this.changeTheKeyframes()}}>
+                <div className="circle-wrapper block-center">
+                    <div className="bottle block-center" style = {this.state.bottleStyle} ref = {this.bottleRef} onClick = {() => {this.changeTheKeyframes()}}>
                         <div className="bottle-top-part">
                             <div className="thread"></div>
                             <div className="end-left"></div>
