@@ -4,11 +4,20 @@ export default class Main extends React.Component{
     constructor(props){
         super(props);
 
-        if(this.props.howmanyofthem === undefined){
+        if(this.props.howmanygamers === undefined || this.props.howmanygamers === null){
             this.state = {
                 bottleStyle: {},
                 ifRotated: false,
-                currentRotation: 0
+                currentRotation: 0,
+                gamers: null
+            };
+        }
+        else{
+            this.state = {
+                bottleStyle: {},
+                ifRotated: false,
+                currentRotation: 0,
+                gamers: this.props.howmanygamers
             };
         }
 
@@ -39,9 +48,56 @@ export default class Main extends React.Component{
         }
     }
     render(){
+        let listOfElems = [];
+        if(this.state.gamers !== null){
+            if(this.state.gamers >= 8){
+                for(let i = 0 ; i <= this.state.gamers; i++){
+                    listOfElems.push(<div className={"circle-elem elem-"+i} style = {{
+                        transform: "rotate("+(i+1)*(360/this.state.gamers)+"deg)"
+                    }}></div>);
+                }
+            }
+            else if(this.state.gamers >= 6){
+                for(let i = 1 ; i <= this.state.gamers; i++){
+                    listOfElems.push(<div className={"circle-elem-2 elem-2-"+i} style = {{
+                        transform: "rotate("+i*(360/this.state.gamers)+"deg)"
+                    }}></div>);
+                }
+            }
+            else if(this.state.gamers === 5){
+                for(let i = 1 ; i <= this.state.gamers; i++){
+                    listOfElems.push(<div className={"circle-elem-3 elem-2-"+i} style = {{
+                        transform: "rotate("+i*(360/this.state.gamers)+"deg)"
+                    }}></div>);
+                }
+            }
+            else if(this.state.gamers === 4){
+                for(let i = 1 ; i <= this.state.gamers; i++){
+                    listOfElems.push(<div className={"circle-elem-4 elem-3-"+i} style = {{
+                        transform: "rotate("+i*(360/this.state.gamers)+"deg)"
+                    }}></div>);
+                }
+            }
+            else if(this.state.gamers === 3){
+                for(let i = 1 ; i <= this.state.gamers; i++){
+                    listOfElems.push(<div className={"circle-elem-5 elem-2-"+i} style = {{
+                        transform: "rotate("+i*(360/this.state.gamers)+"deg) skewY(60deg)"
+                    }}></div>);
+                }
+            }
+            else if(this.state.gamers === 2){
+                for(let i = 1 ; i <= this.state.gamers; i++){
+                    listOfElems.push(<div className={"circle-elem-6 elem-3-"+i}></div>);
+                }
+            }
+        }
         return(
             <div className="main-content">
                 <div className="circle-wrapper block-center">
+                    {this.state.gamers === null ? "":
+                    <div className="circle-div">
+                        {listOfElems}
+                    </div>}
                     <div className="bottle block-center" style = {this.state.bottleStyle} ref = {this.bottleRef} onClick = {() => {this.changeTheKeyframes()}}>
                         <div className="bottle-top-part">
                             <div className="thread"></div>

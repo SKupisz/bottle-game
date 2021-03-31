@@ -1,3 +1,62 @@
+.circle-div{
+    width: 70vh;
+    height: 70vh;
+    position: relative;
+    top: 10vh;
+    border-radius: 50%;
+    overflow: hidden;
+    .circle-elem, .circle-elem-2, .circle-elem-3, .circle-elem-4,
+    .circle-elem-5{
+        height: 0;
+        width: 0;
+        border-right: 35vh solid blue;
+        border-top: 35vh solid transparent;
+        transform-origin: bottom left;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .circle-elem-2{
+        border-top: 60vh solid transparent;
+        border-right: 35vh solid blue;
+        top: -25vh;
+    }
+    .circle-elem-3{
+        border-top: 180vh solid transparent;
+        border-right: 35vh solid blue;
+        top: -145vh;
+    }
+    .circle-elem-4{
+        height: 35vh;
+        width: 35vh;
+        border: none;
+        background: blue;
+    }
+    .circle-elem-5{
+        border-top: 180vh solid transparent;
+        border-right: 35vh solid blue;
+        top: -145vh;
+    }
+    .circle-elem-6{
+        width: 70vh;
+        height: 35vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background: blue;
+    }
+    @for $i from 1 through 11{
+        .elem-#{$i}{
+            border-right-color: rgb(30 * ($i + 1), 20 * ($i + 1), 20 * ($i + 1));
+        }
+        .elem-2-#{$i}{
+            border-right-color: rgb(100,255 - 20*($i+1),255 - 20*($i+1));
+        }
+        .elem-3-#{$i}{
+            background: rgb(100,220 - 20*($i+1),255 - 20*($i+1));
+        }
+    }
+}
 .circle-wrapper{
     width: 70vh;
     height: 70vh;
@@ -8,6 +67,11 @@
     border: 10px solid rgb(150,75,0);
     box-shadow: 1px 1px 10px #111, inset 1px 1px 4px rgba(150,75,0,1), 
     inset 1px 1px 10px rgba(150,75,0,0.5);
+    overflow: hidden;
+    .circle-div{
+        position: absolute;
+        top: 0;
+    }
     .bottle{
         position: relative;
         top: 8vh;
