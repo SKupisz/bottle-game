@@ -80,7 +80,7 @@ export default class Main extends React.Component{
             }
             else if(this.state.gamers === 3){
                 for(let i = 1 ; i <= this.state.gamers; i++){
-                    listOfElems.push(<div className={"circle-elem-5 elem-2-"+i} style = {{
+                    listOfElems.push(<div className={"circle-elem-3 elem-2-"+i} style = {{
                         transform: "rotate("+i*(360/this.state.gamers)+"deg) skewY(60deg)"
                     }}></div>);
                 }

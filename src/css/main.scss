@@ -10,6 +10,20 @@ body{
     margin-left: auto !important;
     margin-right: auto !important;
 }
+.close-btn{
+    padding: 10px 20px;
+    margin: 7px auto 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.4s;
+    background:lightgreen;
+}
+.close-btn:hover{
+    filter: brightness(70%);
+}
 .navigation-div{
     .main-header{
         width: calc(90% - 10px);

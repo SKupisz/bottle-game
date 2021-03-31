@@ -23,9 +23,13 @@ export default class Launcher extends React.Component{
     render(){
         return(
             <div className="application-container">
-                {this.state.phase === 2 ? <Main howmanygamers = {this.state.gamers}/> : 
+                {this.state.phase === 2 ? <span>
+                    <button className="close-btn block-center" onClick = {() => {this.runTheGame(0)}}>Main menu</button>
+                    <Main howmanygamers = {this.state.gamers}/>
+                    </span> : 
                 this.state.phase === 1 ? <div className="picking-up block-center">
                     <header className="choosing-header block-center">Choose the number of players</header>
+                    <button className="close-btn block-center" onClick = {() => {this.runTheGame(0)}}>Main menu</button>
                     <button className="pick-the-game" onClick = {() => {this.setState({ gamers: 2}, () => {this.runTheGame(2);})}}>2</button>
                     <button className="pick-the-game" onClick = {() => {this.setState({ gamers: 3}, () => {this.runTheGame(2);})}}>3</button>
                     <button className="pick-the-game" onClick = {() => {this.setState({ gamers: 4}, () => {this.runTheGame(2);})}}>4</button>

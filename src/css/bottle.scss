@@ -32,11 +32,6 @@
         border: none;
         background: blue;
     }
-    .circle-elem-5{
-        border-top: 180vh solid transparent;
-        border-right: 35vh solid blue;
-        top: -145vh;
-    }
     .circle-elem-6{
         width: 70vh;
         height: 35vh;
@@ -144,10 +139,36 @@
     }
 }
 @media screen and (max-width: 568px){
-    .circle-wrapper{
+    .circle-div,.circle-wrapper{
         width: 50vh;
         height: 50vh;
         top: 20vh;
+    }
+    .circle-div{
+        .circle-elem{
+            top: -10vh;
+            right: -10vh;
+        }
+        .circle-elem-2{
+            border-top: 60vh solid transparent;
+            border-right-width: 25vh;
+            top: -35vh;
+        }
+        .circle-elem-4{
+            height: 25vh;
+            width: 25vh;
+        }
+        .circle-elem-3{
+            border-top: 129vh solid transparent;
+            border-right-width: 25vh;
+            top: -104vh;
+        }
+        .circle-elem-6{
+            width: 50vh;
+            height: 25vh;
+        }
+    }
+    .circle-wrapper{
         .bottle-main-part {
             .label{
             font-size: 0.9em !important;
